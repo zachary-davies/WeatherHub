@@ -1,12 +1,12 @@
 {
   "name": "weatherhub",
   "version": "1.0.0",
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "description": "Simple weather hub to learn basic Node.JS",
   "main": "index.js",
   "scripts": {
     "build": "npx tsc",
-    "start": "tsc && node server/index.js",
-    "dev": "nodemon server/index.ts",
+    "start": "tsc && node index.js",
+    "dev": "nodemon index.ts",
     "lint": "eslint . --ext .ts"
   },
   "keywords": [],

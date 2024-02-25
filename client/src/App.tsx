@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
 import { WeatherInfo } from "@Common/types";
-import axios from "axios";
-import logo from "./logo.svg";
-import "./App.css";
+import axios, { AxiosResponse } from "axios";
+import { useState, useEffect } from "react";
+import WeatherDisplay from "./components/WeatherDisplay";
 
 function App() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<WeatherInfo | null>(null);
 
   useEffect(() => {
     axios
@@ -14,17 +13,15 @@ function App() {
           city: "Rochester,ny,us",
         },
       })
-      .then((response) => {
+      .then((response: AxiosResponse) => {
         const data = response.data;
-        console.log(data);
+        setData(data);
       });
   }, []);
-
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
+        {!data ? <p>Loading...</p> : <WeatherDisplay weatherData={data} />}
       </header>
     </div>
   );

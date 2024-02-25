@@ -1,4 +1,4 @@
-export interface WeatherInfo {
+export type WeatherInfo = {
   city: string;
   forecast: string;
   forecastDetails: string;
@@ -6,9 +6,9 @@ export interface WeatherInfo {
   feelsLike: number;
   tempMin: number;
   tempMax: number;
-}
+};
 
-export interface WeatherResponse {
+export type WeatherResponse = {
   coord: { lon: number; lat: number };
   weather: [{ id: number; main: string; description: string; icon: string }];
   base: string;
@@ -35,12 +35,4 @@ export interface WeatherResponse {
   id: number;
   name: string;
   cod: number;
-}
-
-// export interface RequestBody {
-//   city: string;
-// }
-
-// export interface TypedRequestBody<T> extends Express.Request {
-//   body: T;
-// }
+};

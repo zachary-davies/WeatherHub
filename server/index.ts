@@ -1,5 +1,5 @@
 import { AxiosResponse } from "axios";
-import { WeatherInfo, WeatherResponse } from "../common/types";
+import { WeatherInfo, WeatherResponse } from "@Common/types";
 import Express from "express";
 
 const express = require("express");
