@@ -1,5 +1,5 @@
-import { AxiosResponse } from "axios";
-import { WeatherInfo, WeatherResponse } from "@Common/types";
+import { AxiosError, AxiosResponse } from "axios";
+import { WeatherError, WeatherInfo, WeatherResponse } from "@Common/types";
 import Express from "express";
 
 const express = require("express");
@@ -35,6 +35,12 @@ app.get("/api", (req: Express.Request, res: Express.Response) => {
         tempMax: data.main.temp_max,
       };
       res.status(200).json(weatherInfo);
+    })
+    .catch((e: AxiosError) => {
+      const errorData = e.response?.data as WeatherError;
+      res.status(parseInt(errorData.cod)).send({
+        message: "No city found!",
+      });
     });
 });
 

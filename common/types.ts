@@ -36,3 +36,8 @@ export type WeatherResponse = {
   name: string;
   cod: number;
 };
+
+export type WeatherError = {
+  cod: string;
+  message: string;
+};

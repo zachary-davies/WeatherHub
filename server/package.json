@@ -1,12 +1,10 @@
 {
-  "name": "weatherhub",
+  "name": "server",
   "version": "1.0.0",
-  "description": "Simple weather hub to learn basic Node.JS",
   "main": "index.js",
   "scripts": {
     "build": "npx tsc",
-    "start": "tsc && node index.js",
-    "dev": "nodemon index.ts",
+    "start": "tsc && nodemon index.ts",
     "lint": "eslint . --ext .ts"
   },
   "keywords": [],
